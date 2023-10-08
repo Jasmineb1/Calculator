@@ -2,11 +2,13 @@ let input = document.getElementById('inputBox');
 let buttons = document.querySelectorAll('button');
 
 let string = "";
+//For input through the buttons click
 let arr = Array.from(buttons);
 arr.forEach(button => {
     button.addEventListener('click', (e) => handleInput(e.target.innerHTML));
 });
 
+// For input through the keyboard
 document.addEventListener('keydown', (e) => {
     const key = e.key;
     if (isValidInput(key)) {
@@ -21,6 +23,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Different cases for handling the  functions
 function handleInput(inputValue) {
     switch (inputValue) {
         case '=':
